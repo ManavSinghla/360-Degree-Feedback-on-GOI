@@ -8,14 +8,15 @@ const {
   deleteNewsStory
 } = require('../controllers/newsController');
 const { protect, authorize } = require('../middleware/auth');
+const { apiLimiter, writeLimiter } = require('../middleware/rateLimiter');
 
 router.route('/')
-  .get(getNewsStories)
-  .post(protect, authorize('admin'), createNewsStory);
+  .get(apiLimiter, getNewsStories)
+  .post(protect, authorize('admin'), writeLimiter, createNewsStory);
 
 router.route('/:id')
-  .get(getNewsStory)
-  .put(protect, authorize('admin'), updateNewsStory)
-  .delete(protect, authorize('admin'), deleteNewsStory);
+  .get(apiLimiter, getNewsStory)
+  .put(protect, authorize('admin'), writeLimiter, updateNewsStory)
+  .delete(protect, authorize('admin'), writeLimiter, deleteNewsStory);
 
 module.exports = router;
