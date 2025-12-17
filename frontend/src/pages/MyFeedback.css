@@ -1,0 +1,150 @@
+.my-feedback-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.my-feedback-container h1 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-feedback {
+  text-align: center;
+  padding: 3rem;
+}
+
+.no-feedback p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.feedback-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-news-title {
+  margin-bottom: 1rem;
+}
+
+.feedback-news-title a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.feedback-news-title a:hover {
+  text-decoration: underline;
+}
+
+.feedback-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.sentiment-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sentiment-badge.positive {
+  background: #d4edda;
+  color: #155724;
+}
+
+.sentiment-badge.neutral {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.sentiment-badge.negative {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.rating {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.feedback-comment {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.feedback-date {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.news-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #667eea;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
