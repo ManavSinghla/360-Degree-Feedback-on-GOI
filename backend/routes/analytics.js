@@ -7,7 +7,7 @@ const {
 const { protect, authorize } = require('../middleware/auth');
 const { apiLimiter } = require('../middleware/rateLimiter');
 
-router.get('/dashboard', protect, authorize('admin'), apiLimiter, getDashboardAnalytics);
-router.get('/trends', protect, authorize('admin'), apiLimiter, getFeedbackTrends);
+router.get('/dashboard', apiLimiter, protect, authorize('admin'), getDashboardAnalytics);
+router.get('/trends', apiLimiter, protect, authorize('admin'), getFeedbackTrends);
 
 module.exports = router;
