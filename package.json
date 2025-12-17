@@ -1,0 +1,24 @@
+{
+  "name": "360-degree-feedback-on-goi",
+  "version": "1.0.0",
+  "description": "MERN stack platform for 360-degree feedback on GOI news",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "start-backend": "cd backend && npm start",
+    "start-frontend": "cd frontend && npm start",
+    "dev-backend": "cd backend && npm run dev",
+    "dev-frontend": "cd frontend && npm start",
+    "test": "cd backend && npm test && cd ../frontend && npm test"
+  },
+  "keywords": [
+    "mern",
+    "feedback",
+    "government",
+    "news",
+    "analytics"
+  ],
+  "author": "",
+  "license": "MIT"
+}
