@@ -8,12 +8,13 @@ const {
   getMyFeedback
 } = require('../controllers/feedbackController');
 const { protect } = require('../middleware/auth');
+const { apiLimiter, writeLimiter } = require('../middleware/rateLimiter');
 
-router.post('/', protect, createFeedback);
-router.get('/my-feedback', protect, getMyFeedback);
-router.get('/news/:newsId', getFeedbackByNews);
+router.post('/', protect, writeLimiter, createFeedback);
+router.get('/my-feedback', protect, apiLimiter, getMyFeedback);
+router.get('/news/:newsId', apiLimiter, getFeedbackByNews);
 router.route('/:id')
-  .put(protect, updateFeedback)
-  .delete(protect, deleteFeedback);
+  .put(protect, writeLimiter, updateFeedback)
+  .delete(protect, writeLimiter, deleteFeedback);
 
 module.exports = router;
