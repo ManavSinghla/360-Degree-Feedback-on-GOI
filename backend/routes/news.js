@@ -12,11 +12,11 @@ const { apiLimiter, writeLimiter } = require('../middleware/rateLimiter');
 
 router.route('/')
   .get(apiLimiter, getNewsStories)
-  .post(protect, authorize('admin'), writeLimiter, createNewsStory);
+  .post(writeLimiter, protect, authorize('admin'), createNewsStory);
 
 router.route('/:id')
   .get(apiLimiter, getNewsStory)
-  .put(protect, authorize('admin'), writeLimiter, updateNewsStory)
-  .delete(protect, authorize('admin'), writeLimiter, deleteNewsStory);
+  .put(writeLimiter, protect, authorize('admin'), updateNewsStory)
+  .delete(writeLimiter, protect, authorize('admin'), deleteNewsStory);
 
 module.exports = router;
