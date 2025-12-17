@@ -99,7 +99,12 @@ exports.getDashboardAnalytics = async (req, res) => {
 
     // Get total counts
     const totalNewsStories = await NewsStory.countDocuments(matchQuery);
-    const totalFeedback = await Feedback.countDocuments();
+    
+    // Count feedback for news stories matching the filter
+    const newsIds = await NewsStory.find(matchQuery).select('_id');
+    const totalFeedback = await Feedback.countDocuments({
+      newsStory: { $in: newsIds.map(n => n._id) }
+    });
 
     // Get recent feedback
     const recentFeedback = await Feedback.find()
