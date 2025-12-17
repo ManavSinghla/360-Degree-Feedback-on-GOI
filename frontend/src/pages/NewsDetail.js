@@ -120,7 +120,7 @@ const NewsDetail = () => {
         )}
 
         {!isAuthenticated && (
-          <p className="info-message">Please <a href="/login">login</a> to submit feedback</p>
+          <p className="info-message">Please <Link to="/login">login</Link> to submit feedback</p>
         )}
 
         {showFeedbackForm && (
